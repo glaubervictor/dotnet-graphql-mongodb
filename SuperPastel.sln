@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Nucleo", "1 - Nucleo", "{5BD50F9F-6CB1-4C52-A3B2-5B8DFC082FF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Dominio", "2 - Dominio", "{078D0CBF-FFFC-4B5D-982B-A4C861832D9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infraestrutura", "3 - Infraestrutura", "{A7A308B4-49B3-4F05-B848-E3919DF692BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Aplicacao", "4 - Aplicacao", "{8EB1378D-C96E-4DEF-97E8-B59EDDAC6DF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperPastel.Nucleo", "SuperPastel.Nucleo\SuperPastel.Nucleo.csproj", "{8EEAEA95-A559-4A33-A896-A073788C53B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperPastel.Infra.Dados", "SuperPastel.Infra.Dados\SuperPastel.Infra.Dados.csproj", "{75BDB148-D76F-447D-84D9-97B4AE890C42}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperPastel.Dominio", "SuperPastel.Dominio\SuperPastel.Dominio.csproj", "{E132CE15-F5BE-489C-B7CB-20E77E57A947}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Api", "5 - Api", "{DFD9C5EF-466D-49EB-8166-51782ED7F018}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperPastel.GraphQL", "SuperPastel.GraphQL\SuperPastel.GraphQL.csproj", "{18AA802A-D61B-4AEC-8C8A-B91BE53BB8A3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperPastel.Api", "SuperPastel.Api\SuperPastel.Api.csproj", "{1D3C986F-5759-4893-B80C-5D2C0D53C754}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperPastel.Infra.InversaoDeControle", "SuperPastel.Infra.InversaoDeControle\SuperPastel.Infra.InversaoDeControle.csproj", "{3F6EB63E-7A42-4EFB-ADC4-A8E8C887CC80}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperPastel.Infra.Transporte", "SuperPastel.Infra.Transporte\SuperPastel.Infra.Transporte.csproj", "{B1A13369-715A-40E0-B8D9-75C9612A3A2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EEAEA95-A559-4A33-A896-A073788C53B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EEAEA95-A559-4A33-A896-A073788C53B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EEAEA95-A559-4A33-A896-A073788C53B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EEAEA95-A559-4A33-A896-A073788C53B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75BDB148-D76F-447D-84D9-97B4AE890C42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75BDB148-D76F-447D-84D9-97B4AE890C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75BDB148-D76F-447D-84D9-97B4AE890C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75BDB148-D76F-447D-84D9-97B4AE890C42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E132CE15-F5BE-489C-B7CB-20E77E57A947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E132CE15-F5BE-489C-B7CB-20E77E57A947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E132CE15-F5BE-489C-B7CB-20E77E57A947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E132CE15-F5BE-489C-B7CB-20E77E57A947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18AA802A-D61B-4AEC-8C8A-B91BE53BB8A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18AA802A-D61B-4AEC-8C8A-B91BE53BB8A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18AA802A-D61B-4AEC-8C8A-B91BE53BB8A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18AA802A-D61B-4AEC-8C8A-B91BE53BB8A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D3C986F-5759-4893-B80C-5D2C0D53C754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D3C986F-5759-4893-B80C-5D2C0D53C754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D3C986F-5759-4893-B80C-5D2C0D53C754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D3C986F-5759-4893-B80C-5D2C0D53C754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F6EB63E-7A42-4EFB-ADC4-A8E8C887CC80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F6EB63E-7A42-4EFB-ADC4-A8E8C887CC80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F6EB63E-7A42-4EFB-ADC4-A8E8C887CC80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F6EB63E-7A42-4EFB-ADC4-A8E8C887CC80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1A13369-715A-40E0-B8D9-75C9612A3A2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1A13369-715A-40E0-B8D9-75C9612A3A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1A13369-715A-40E0-B8D9-75C9612A3A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1A13369-715A-40E0-B8D9-75C9612A3A2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8EEAEA95-A559-4A33-A896-A073788C53B0} = {5BD50F9F-6CB1-4C52-A3B2-5B8DFC082FF9}
+		{75BDB148-D76F-447D-84D9-97B4AE890C42} = {A7A308B4-49B3-4F05-B848-E3919DF692BF}
+		{E132CE15-F5BE-489C-B7CB-20E77E57A947} = {078D0CBF-FFFC-4B5D-982B-A4C861832D9B}
+		{18AA802A-D61B-4AEC-8C8A-B91BE53BB8A3} = {8EB1378D-C96E-4DEF-97E8-B59EDDAC6DF4}
+		{1D3C986F-5759-4893-B80C-5D2C0D53C754} = {DFD9C5EF-466D-49EB-8166-51782ED7F018}
+		{3F6EB63E-7A42-4EFB-ADC4-A8E8C887CC80} = {A7A308B4-49B3-4F05-B848-E3919DF692BF}
+		{B1A13369-715A-40E0-B8D9-75C9612A3A2D} = {A7A308B4-49B3-4F05-B848-E3919DF692BF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CA0D142-7250-47E5-A58C-281AE7F1E453}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net6.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GraphQL.MicrosoftDI" Version="4.7.1" />
+    <PackageReference Include="GraphQL.Server.Authorization.AspNetCore" Version="5.2.0" />
+    <PackageReference Include="GraphQL.Server.Transports.AspNetCore" Version="5.2.0" />
+    <PackageReference Include="GraphQL.Server.Transports.AspNetCore.SystemTextJson" Version="5.2.0" />
+    <PackageReference Include="GraphQL.Server.Ui.Playground" Version="5.2.0" />
+    <PackageReference Include="GraphQL.Upload.AspNetCore" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SuperPastel.Dominio\SuperPastel.Dominio.csproj" />
+    <ProjectReference Include="..\SuperPastel.Nucleo\SuperPastel.Nucleo.csproj" />
+  </ItemGroup>
+
+</Project>

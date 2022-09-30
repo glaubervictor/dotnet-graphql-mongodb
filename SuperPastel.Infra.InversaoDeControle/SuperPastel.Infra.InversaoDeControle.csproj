@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net6.0</TargetFramework>
+	  <ImplicitUsings>true</ImplicitUsings>
+	  <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Scrutor" Version="4.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SuperPastel.GraphQL\SuperPastel.GraphQL.csproj" />
+    <ProjectReference Include="..\SuperPastel.Infra.Dados\SuperPastel.Infra.Dados.csproj" />
+    <ProjectReference Include="..\SuperPastel.Infra.Transporte\SuperPastel.Infra.Transporte.csproj" />
+    <ProjectReference Include="..\SuperPastel.Nucleo\SuperPastel.Nucleo.csproj" />
+  </ItemGroup>
+
+</Project>
