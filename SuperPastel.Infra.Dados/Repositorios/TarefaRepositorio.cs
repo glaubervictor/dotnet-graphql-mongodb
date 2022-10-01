@@ -33,19 +33,15 @@ namespace SuperPastel.Infra.Dados.Repositorios
                     }),
                 new BsonDocument("$set",
                 new BsonDocument("Usuario",
-                new BsonDocument("$first", "$Usuario")))
+                new BsonDocument("$first", "$Usuario"))),
+                new BsonDocument("$skip", tamanho * indice),
+                new BsonDocument("$limit", tamanho)
             };
 
             var query = _collection.Aggregate(pipeline).ToList();
 
             var registroTotal = query.Count;
-
-            var dados = query
-                .Skip(tamanho * indice)
-                .Take(tamanho)
-                .AsEnumerable();
-
-            return new PageInfo<Tarefa>(registroTotal, tamanho, dados);
+            return new PageInfo<Tarefa>(registroTotal, tamanho, query);
         }
     }
 }
