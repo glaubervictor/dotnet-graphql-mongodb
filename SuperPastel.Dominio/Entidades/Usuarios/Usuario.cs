@@ -33,6 +33,8 @@ namespace SuperPastel.Dominio.Entidades.Usuarios
             Pessoa = pessoa;
 
             GerarHashSenha(senha);
+
+            ValidarPessoa();
             ValidarUsuario();
 
             return this;
@@ -58,6 +60,18 @@ namespace SuperPastel.Dominio.Entidades.Usuarios
         {
             SenhaHash = Passwords.HashPassword(senha);
             return this;
+        }
+
+        private void ValidarPessoa()
+        {
+            var result = new PessoaValidacao().Validate(Pessoa);
+
+            if (!result.IsValid)
+            {
+                result.Errors
+                    .ToList()
+                    .ForEach(x => Bus.RaiseEvent(new NotificacaoDominio(x.PropertyName, x.ErrorMessage)));
+            }
         }
 
         private void ValidarUsuario()

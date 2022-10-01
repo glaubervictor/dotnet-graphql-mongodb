@@ -14,11 +14,15 @@ namespace SuperPastel.GraphQL.Mutations
 {
     public class UsuarioMutation : ObjectGraphType
     {
+        private readonly IUsuarioRepositorio _usuarioRepositorio;
+
         public UsuarioMutation(
             IMediatorHandler bus,
             INotificationHandler<NotificacaoDominio> notificacao,
             IUsuarioRepositorio usuarioRepositorio)
         {
+            _usuarioRepositorio = usuarioRepositorio;
+
             Name = nameof(UsuarioMutation);
             Description = "Mutations de usuário";
 
@@ -29,6 +33,12 @@ namespace SuperPastel.GraphQL.Mutations
                 resolve: context =>
                 {
                     var input = context.GetArgument<UsuarioInput>("input");
+
+                    if (EmailJaCadastrado(input.Email))
+                    {
+                        context.Errors.Add(new ExecutionError("E-mail já cadastrado"));
+                        return null;
+                    }
 
                     var pessoa = new Pessoa(
                         input.Pessoa.Nome,
@@ -59,6 +69,9 @@ namespace SuperPastel.GraphQL.Mutations
                     return usuarioRepositorio.Adicionar(usuario);
                 });
         }
+
+        private bool EmailJaCadastrado(string email) 
+            => _usuarioRepositorio.ObterTodos(x => x.Email == email).Any();
 
     }
 }

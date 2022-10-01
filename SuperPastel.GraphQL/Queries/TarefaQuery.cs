@@ -43,7 +43,7 @@ namespace SuperPastel.GraphQL.Queries
 
                 resolve: context =>
                 {
-                    return tarefaRepositorio.ObterPaginado(
+                    return tarefaRepositorio.ObterPaginadoComUsuario(
                         context.GetArgument<int>("indice"),
                         context.GetArgument<int>("tamanho"));
                 }).AuthorizeWith(Policies.MANAGER);
