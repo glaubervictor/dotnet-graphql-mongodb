@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Hosting;
 using System;
+using System.Net;
 
 namespace SuperPastel.Api
 {
@@ -13,17 +15,21 @@ namespace SuperPastel.Api
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
+                .ConfigureWebHostDefaults(builder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    builder.UseStartup<Startup>();
 
                     // For running in Railway
                     var portVar = Environment.GetEnvironmentVariable("PORT");
                     if (portVar is { Length: > 0 } && int.TryParse(portVar, out int port))
                     {
-                        webBuilder.ConfigureKestrel(options =>
+                        builder.ConfigureKestrel((context, options) =>
                         {
-                            options.ListenAnyIP(port);
+                            options.Listen(IPAddress.Any, port, listenOptions =>
+                            {
+                                listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
+                                listenOptions.UseHttps();
+                            });
                         });
                     }
                 });
