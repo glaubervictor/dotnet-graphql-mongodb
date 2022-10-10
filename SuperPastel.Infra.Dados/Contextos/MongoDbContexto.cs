@@ -21,7 +21,13 @@ namespace SuperPastel.Infra.Dados.Contextos
 
         private void InicializarDadosConexao(IConfiguration configuration)
         {
-            var url = new MongoUrl(configuration.GetConnectionString("MONGODB_CONNECTION"));
+            MongoUrl url = null;
+
+#if DEBUG
+            url = new MongoUrl(configuration.GetConnectionString("MONGODB_CONNECTION"));
+#else
+            url = new MongoUrl(Environment.GetEnvironmentVariable("MONGO_DB"));
+#endif
             var settings = new MongoClientSettings
             {
                 MaxConnectionIdleTime = new TimeSpan(0, 5, 0),
