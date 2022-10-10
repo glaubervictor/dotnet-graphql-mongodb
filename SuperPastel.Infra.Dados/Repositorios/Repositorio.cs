@@ -5,7 +5,6 @@ using System.Linq.Expressions;
 using MongoDB.Driver;
 using MediatR;
 using SuperPastel.Nucleo.Notificacoes;
-using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
 
 namespace SuperPastel.Infra.Dados.Repositorios
 {
@@ -27,6 +26,14 @@ namespace SuperPastel.Infra.Dados.Repositorios
             ValidateAndThrow();
 
             _collection.InsertOne(entidade);
+            return entidade;
+        }
+
+        public virtual TEntidade Atualizar(TEntidade entidade)
+        {
+            ValidateAndThrow();
+
+            _collection.ReplaceOne(x => x.Id == entidade.Id, entidade);
             return entidade;
         }
 

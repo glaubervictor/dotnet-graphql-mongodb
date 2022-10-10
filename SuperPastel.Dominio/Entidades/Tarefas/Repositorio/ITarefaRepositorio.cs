@@ -5,6 +5,6 @@ namespace SuperPastel.Dominio.Entidades.Tarefas.Repositorio
 {
     public interface ITarefaRepositorio : IRepositorio<Tarefa>
     {
-        PageInfo<Tarefa> ObterPaginadoComUsuario(int indice, int tamanho);
+        PageInfo<Tarefa> ObterPaginadoComUsuario(int indice, int tamanho, Guid? usuarioId = null);
     }
 }

@@ -8,7 +8,7 @@ namespace SuperPastel.GraphQL.Types.Tarefas
     {
         public TarefaPagedInfoType()
         {
-            Field<ListGraphType<TarefaType>>("tarefas", resolve: context => context.Source.List);
+            Field<ListGraphType<TarefaType>>("items", resolve: context => context.Source.List);
             Field(x => x.PageCount);
             Field(x => x.Size);
             Field(x => x.TotalCount);

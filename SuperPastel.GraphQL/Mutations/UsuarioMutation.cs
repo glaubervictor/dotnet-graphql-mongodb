@@ -55,8 +55,12 @@ namespace SuperPastel.GraphQL.Mutations
 
                     var usuario = new Usuario(bus)
                         .Criar(input.Email, input.Senha, pessoa)
-                        .ConfirmarEmail()
-                        .EhSuperUsuario();
+                        .ConfirmarEmail();
+
+                    if (input.SuperUsuario)
+                    {
+                        usuario.EhSuperUsuario();
+                    }
 
                     var notificacoes = (NotificacaoDominioHandler)notificacao;
 

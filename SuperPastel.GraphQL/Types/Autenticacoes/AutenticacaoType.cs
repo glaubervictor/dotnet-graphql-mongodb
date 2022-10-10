@@ -10,6 +10,7 @@ namespace SuperPastel.GraphQL.Types.Autenticacoes
         {
             Name = nameof(AutenticacaoType);
 
+            Field(x => x.Perfil);
             Field(x => x.Token);
             Field(x => x.ValidoAte, type: typeof(DateTimeGraphType));
         }

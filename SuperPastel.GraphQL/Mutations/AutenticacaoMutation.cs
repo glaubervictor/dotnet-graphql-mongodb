@@ -17,14 +17,14 @@ namespace SuperPastel.GraphQL.Mutations
             Name = nameof(AutenticacaoMutation);
 
             Field<AutenticacaoType>(
-                "user",
+                "login",
                 description: "Autenticar um usuário",
                 arguments: new QueryArguments(
-                    new QueryArgument<NonNullGraphType<LoginInputType>> { Name = "login" }
+                    new QueryArgument<NonNullGraphType<LoginInputType>> { Name = "input" }
                 ),
                 resolve: context =>
                 {
-                    var login = context.GetArgument<Login>("login");
+                    var login = context.GetArgument<Login>("input");
                     var usuario = usuarioRepositorio.ObterPorEmail(login.Email);
 
                     if (usuario == null)
@@ -46,13 +46,13 @@ namespace SuperPastel.GraphQL.Mutations
                     }
 
                     var dataValidade = DateTime.Now.AddDays(1);
-                    var papel = usuario.SuperUsuario ? "Gerente" : "Usuario";
+                    var perfil = usuario.SuperUsuario ? "Gerente" : "Usuario";
 
                     var token = new JwtConfiguracao().GerarToken(
                         configuration, usuario.Id, dataValidade,
-                        usuario.SuperUsuario, new string[] { papel });
+                        usuario.SuperUsuario, new string[] { perfil });
 
-                    return new Autenticacao(token, dataValidade);
+                    return new Autenticacao(perfil, token, dataValidade);
 
                 });
         }

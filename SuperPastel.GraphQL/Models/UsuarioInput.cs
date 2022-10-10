@@ -4,6 +4,7 @@
     {
         public string Email { get; set; }
         public string Senha { get; set; }
+        public bool SuperUsuario { get; set; }
         public PessoaInput Pessoa { get; set; }
     }
 }

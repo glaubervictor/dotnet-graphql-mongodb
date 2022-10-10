@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-namespace SuperPastel.GraphQL.Models
+﻿namespace SuperPastel.GraphQL.Models
 {
     public class TarefaInput
     {

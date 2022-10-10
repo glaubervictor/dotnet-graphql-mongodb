@@ -10,6 +10,7 @@ namespace SuperPastel.GraphQL.Types.Usuarios
         {
             Field(x => x.Email);
             Field(x => x.Senha);
+            Field(x => x.SuperUsuario);
             Field(x => x.Pessoa, type: typeof(PessoaInputType));
         }
     }

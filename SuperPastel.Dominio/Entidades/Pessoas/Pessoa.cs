@@ -59,11 +59,11 @@ namespace SuperPastel.Dominio.Entidades.Pessoas
             var mensagens = new Mensagens<Pessoa>();
 
             RuleFor(x => x.Nome).NotEmpty().WithMessage(mensagens.Requerido(x => x.Nome)).MaximumLength(100).WithMessage(mensagens.MaximoCaracterePermitido(x => x.Nome, 100));
-            RuleFor(x => x.Cep).NotEmpty().WithMessage(mensagens.Requerido(x => x.Cep)).MaximumLength(8).WithMessage(mensagens.MaximoCaracterePermitido(x => x.Cep, 8));
+            RuleFor(x => x.Cep).NotEmpty().WithMessage(mensagens.Requerido(x => x.Cep)).MaximumLength(9).WithMessage(mensagens.MaximoCaracterePermitido(x => x.Cep, 9));
             RuleFor(x => x.Logradouro).NotEmpty().WithMessage(mensagens.Requerido(x => x.Logradouro)).MaximumLength(80).WithMessage(mensagens.MaximoCaracterePermitido(x => x.Logradouro, 80));
             RuleFor(x => x.Bairro).NotEmpty().WithMessage(mensagens.Requerido(x => x.Bairro)).MaximumLength(80).WithMessage(mensagens.MaximoCaracterePermitido(x => x.Bairro, 80));
             RuleFor(x => x.Cidade).NotEmpty().WithMessage(mensagens.Requerido(x => x.Cidade)).MaximumLength(80).WithMessage(mensagens.MaximoCaracterePermitido(x => x.Cidade, 80));
-            RuleFor(x => x.Celular).NotEmpty().WithMessage(mensagens.Requerido(x => x.Celular)).MaximumLength(11).WithMessage(mensagens.MaximoCaracterePermitido(x => x.Celular, 11));
+            RuleFor(x => x.Celular).NotEmpty().WithMessage(mensagens.Requerido(x => x.Celular)).MaximumLength(14).WithMessage(mensagens.MaximoCaracterePermitido(x => x.Celular, 14));
         }
     }
 }

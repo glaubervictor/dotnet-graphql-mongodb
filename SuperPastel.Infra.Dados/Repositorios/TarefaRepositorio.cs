@@ -3,7 +3,6 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using SuperPastel.Dominio.Entidades.Tarefas;
 using SuperPastel.Dominio.Entidades.Tarefas.Repositorio;
-using SuperPastel.Dominio.Entidades.Usuarios;
 using SuperPastel.Infra.Dados.Contextos;
 using SuperPastel.Nucleo.Base;
 using SuperPastel.Nucleo.Notificacoes;
@@ -16,7 +15,7 @@ namespace SuperPastel.Infra.Dados.Repositorios
         {
         }
 
-        public PageInfo<Tarefa> ObterPaginadoComUsuario(int indice, int tamanho)
+        public PageInfo<Tarefa> ObterPaginadoComUsuario(int indice, int tamanho, Guid? usuarioId = null)
         {
             if (tamanho < 1 || tamanho > 50)
                 tamanho = 50;
@@ -40,8 +39,13 @@ namespace SuperPastel.Infra.Dados.Repositorios
 
             var query = _collection.Aggregate(pipeline).ToList();
 
-            var registroTotal = query.Count;
-            return new PageInfo<Tarefa>(registroTotal, tamanho, query);
+            if (usuarioId.HasValue)
+            {
+                var queryNew = query.Where(x => x.UsuarioId == usuarioId.Value).ToList();
+                return new PageInfo<Tarefa>(queryNew.Count, tamanho, queryNew);
+            }
+
+            return new PageInfo<Tarefa>(query.Count, tamanho, query);
         }
     }
 }

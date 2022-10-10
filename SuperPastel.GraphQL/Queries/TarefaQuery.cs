@@ -69,10 +69,10 @@ namespace SuperPastel.GraphQL.Queries
                     var usuarioId = sessao.ObterUsuarioId();
                     var pesquisa = context.GetArgument<string>("name");
 
-                    return tarefaRepositorio.ObterPaginado(
+                    return tarefaRepositorio.ObterPaginadoComUsuario(
                         context.GetArgument<int>("indice"),
                         context.GetArgument<int>("tamanho"),
-                        x => x.UsuarioId == usuarioId);
+                        usuarioId);
                 }).AuthorizeWith(Policies.USER);
         }
     }

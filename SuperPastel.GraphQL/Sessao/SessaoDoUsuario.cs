@@ -25,7 +25,7 @@ namespace SuperPastel.GraphQL.Sessao
                 var token = _accessor.HttpContext.Request.Headers["Authorization"].First().Replace("Bearer ", string.Empty);
                 dynamic json = TokenHelper.Deserialize(token, _configuration["Authentication:SecretKey"]);
 
-                if (Guid.TryParse(json.user.Value, out Guid id))
+                if (Guid.TryParse(json.userId.Value, out Guid id))
                 {
                     return id;
                 }
@@ -43,7 +43,7 @@ namespace SuperPastel.GraphQL.Sessao
 
                 if (!string.IsNullOrEmpty(json.superUser.Value))
                 {
-                    return json.superUser.Value == "1";
+                    return json.superUser.Value == "true";
                 }
             }
 

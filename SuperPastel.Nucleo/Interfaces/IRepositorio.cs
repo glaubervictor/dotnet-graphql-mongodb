@@ -6,6 +6,7 @@ namespace SuperPastel.Nucleo.Interfaces
     public interface IRepositorio<TEntidade> : IDisposable where TEntidade : Entidade<TEntidade>
     {
         TEntidade Adicionar(TEntidade entidade);
+        TEntidade Atualizar(TEntidade entidade);
         void AdicionarMuitos(IEnumerable<TEntidade> entidades);
         long Contar(Expression<Func<TEntidade, bool>> expressao);
         PageInfo<TEntidade> ObterPaginado(int indice, int tamanho);

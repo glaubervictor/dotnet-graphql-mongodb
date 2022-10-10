@@ -6,5 +6,6 @@ namespace SuperPastel.Nucleo.Interfaces
     {
         Guid ObterUsuarioId();
         bool EhSuperUsuario();
+        bool EstaAutenticado();
     }
 }

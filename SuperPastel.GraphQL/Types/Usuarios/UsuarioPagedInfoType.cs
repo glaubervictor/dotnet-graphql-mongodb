@@ -8,7 +8,7 @@ namespace SuperPastel.GraphQL.Types.Usuarios
     {
         public UsuarioPagedInfoType()
         {
-            Field<ListGraphType<UsuarioType>>("usuarios", resolve: context => context.Source.List);
+            Field<ListGraphType<UsuarioType>>("items", resolve: context => context.Source.List);
             Field(x => x.PageCount);
             Field(x => x.Size);
             Field(x => x.TotalCount);

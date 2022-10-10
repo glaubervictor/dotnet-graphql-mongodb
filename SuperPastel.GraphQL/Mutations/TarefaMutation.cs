@@ -44,6 +44,20 @@ namespace SuperPastel.GraphQL.Mutations
 
                     return tarefaRepositorio.Adicionar(tarefa);
                 }).AuthorizeWith(Policies.MANAGER);
+
+            Field<BooleanGraphType>(
+                "finalize",
+                description: "Finalizar tarefa",
+                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IdGraphType>> { Name = "id" }),
+                resolve: context =>
+                {
+                    var id = context.GetArgument<Guid>("id");
+
+                    var tarefa = tarefaRepositorio.ObterPorId(id);
+                    tarefa.Finalizar();
+
+                    return tarefaRepositorio.Atualizar(tarefa);
+                }).AuthorizeWith(Policies.USER);
         }
     }
 }
