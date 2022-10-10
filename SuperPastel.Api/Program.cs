@@ -28,7 +28,6 @@ namespace SuperPastel.Api
                             options.Listen(IPAddress.Any, port, listenOptions =>
                             {
                                 listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
-                                listenOptions.UseHttps();
                             });
                         });
                     }
